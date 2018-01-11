@@ -3,8 +3,10 @@ var socket = require('socket.io');
 
 var app = express();
 app.use(express.static('public'));
-var server = app.listen(5000 || process.env.PORT, function () {
-    console.log('running on port 5000');
+var port=5000 || process.env.PORT;
+
+var server = app.listen(port, function () {
+    console.log(`running on port ${port}`);
 });
 var io = socket(server);
 
